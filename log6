@@ -1,0 +1,16 @@
+ESTIMATE of time to complete assignment: 15 hours
+
+      Time     Time
+Date  Started  Spent Work completed
+----  -------  ----  --------------
+12/9  8:00pm   3:00  produced makefile and set up workshop, got conceptually acquainted with BFS
+
+12/10 2:00pm   3:00  worked through BFS algorithm, with some success; coded other 3 methods
+
+12/11 3:00pm   6:00  got BFS algorithm working, and implemented TSP modifications for -greedy
+               ----
+               12:00  TOTAL time spent
+
+I discussed my solution with Clara Schwab and Philena Sun.
+
+After studying for the final exam, I did not find the conceptual load of this problem set to be excessively taxing. Much of preparation for the exam involving familiarizing myself with BFS and DFS algorithms, as well as applications of those elementary algorithms. However, one issue I ran into during the programming implementation of the BFS algorithm was the ability to create helper functions. Because the algorithm requires the consistent modification of variables, it is difficult to pass the main function's load off to helper functions without passing off pointers of all its variables with it. So what I ended up doing was using in-main helper functions, i.e. nested functions, that are forbidden by C and launch a compiler warning but not technically an error. After that, TSP was a bit difficult to wrap my head around because I'd spent so much time away from it that I experienced a bit of PTSD in my re-discovery of and re-familiarization with the variables, methods, and purposes of the program.

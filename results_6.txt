@@ -1,0 +1,152 @@
+
+Final test script for TSP (12/22/2019)
+
+***** Checking for warning messages *****
+Making -B ./TSP Unit
+gcc -std=c99 -pedantic -Wall -g3   -c -o lugraph.o lugraph.c
+lugraph.c: In function ‘lugraph_bfs’:
+lugraph.c:256:5: warning: ISO C forbids nested functions [-Wpedantic]
+  256 |     void enqueue(int pred, int x)
+      |     ^~~~
+lugraph.c:267:5: warning: ISO C forbids nested functions [-Wpedantic]
+  267 |     void dequeue(int adj_list_length, int *adj_list, int x)
+      |     ^~~~
+gcc -std=c99 -pedantic -Wall -g3   -c -o TSP6.o TSP6.c
+gcc -std=c99 -pedantic -Wall -g3   -c -o location.o location.c
+gcc -std=c99 -pedantic -Wall -g3 -o TSP lugraph.o TSP6.o location.o -lm
+gcc -std=c99 -pedantic -Wall -g3   -c -o lugraph_unit.o lugraph_unit.c
+gcc -std=c99 -pedantic -Wall -g3 -o Unit lugraph_unit.o lugraph.o -lm
+makewarn: warning messages from -std=c99 -pedantic -Wall
+
+Each test is either passed or failed; there is no partial credit.
+
+
+           lugraph_connected (15 points)
+PASSED  001. Connected
+PASSED  002. Not connected
+PASSED  003. Connected, long path
+PASSED  004. Connected, from is last vertex
+PASSED  005. Connected, to is last vertex
+PASSED  006. Connected, long path
+PASSED  007. Connected, dense graph
+PASSED  008. Vertex is connected to itself
+
+           lugraph_connected (15 points): 15 points
+
+           Invalid arguments: lugraph_connected (4 points)
+PASSED  009. Connected, negative v1
+PASSED  010. Connected, too-large v1
+PASSED  011. Connected, negative v2
+PASSED  012. Connected, too-large v2
+
+           Invalid arguments: lugraph_connected (4 points): 4 points
+
+           Valgrind: lugraph_connected (6 points)
+PASSED  013. Connected
+PASSED  014. Not connected
+PASSED  015. Vertex is connected to itself
+
+           Valgrind: lugraph_connected (6 points): 6 points
+
+           Efficiency: lugraph_connected (5 points)
+PASSED  016. lugraph_connected
+
+           Efficiency: lugraph_connected (5 points): 5 points
+
+           lug_search_distance (8 points)
+PASSED  017. Distance, path is one edge
+PASSED  018. Distance, multiple paths
+PASSED  019. Distance, to last vertex
+PASSED  020. Distance, from last vertex
+PASSED  021. Distance, no path
+PASSED  022. Distance, long path
+PASSED  023. Distance, dense graph
+
+           lug_search_distance (8 points): 8 points
+
+           Invalid arguments: lug_search_distance (4 points)
+PASSED  024. Distance, negative v1
+PASSED  025. Distance, too-large v1
+PASSED  026. Distance, invalid v2
+PASSED  027. Distance, too-large v2
+
+           Invalid arguments: lug_search_distance (4 points): 4 points
+
+           Valgrind: lug_search_distance (3 points)
+PASSED  028. Distance, path is one edge
+PASSED  029. Distance, multiple paths
+PASSED  030. Distance, no path
+
+           Valgrind: lug_search_distance (3 points): 3 points
+
+           Efficiency: lug_search_distance (3 points)
+PASSED  031. lugraph_distance
+
+           Efficiency: lug_search_distance (3 points): 3 points
+
+           lug_search_path (12 points)
+PASSED  032. Path from vertex to itself
+PASSED  033. One edge path
+PASSED  034. Two edge path
+PASSED  035. Path when multiple paths exist
+PASSED  036. Path when no path exists
+PASSED  037. Path from last vertex
+PASSED  038. Path to last vertex
+PASSED  039. Long path
+PASSED  040. Path in dense graph
+
+           lug_search_path (12 points): 12 points
+
+           Invalid Arguments: lug_search_path (4 points)
+PASSED  041. Path, negative v1
+PASSED  042. Path, too-large v1
+PASSED  043. Path, negative v2
+PASSED  044. Path, too-large v2
+
+           Invalid Arguments: lug_search_path (4 points): 4 points
+
+           Valgrind: lug_search_path (5 points)
+PASSED  045. Path from vertex to itself
+PASSED  046. One edge path
+PASSED  047. Two edge path
+PASSED  048. Path when multiple paths exist
+PASSED  049. Path when no path exists
+
+           Valgrind: lug_search_path (5 points): 5 points
+
+           Efficiency: lug_search_path (5 points)
+PASSED  050. lugraph_path
+
+           Efficiency: lug_search_path (5 points): 5 points
+
+           Greedy TSP (20 points)
+PASSED  051. Example from class/specification
+PASSED  052. Example, reverse route for output
+PASSED  053. 19 cities
+PASSED  054. Valgrind on Example
+
+           Greedy TSP (20 points): 20 points
+
+           Many cities (6 points)
+PASSED  055. 256 cities
+PASSED  056. 512 cities
+
+           Many cities (6 points): 6 points
+
+               Deductions for Violating Specification (0 => no violation)
+
+End of Public Script
+
+100 points Total for TSP
+
+           Possible Deductions (assessed later as appropriate)
+               -10 Deficient style (comments, identifiers, formatting, ...)
+                -5 Does not make
+                -5 Makefile missing
+                -5 Makefile incorrect
+                -1 Log file incorrectly named
+                -1 Log file lacks estimated time
+                -1 Log file lacks total time
+                -1 Log file lacks statement of major difficulties
+
+malouf.jarett.jem276               0   0   6  10   0   0   0      16
